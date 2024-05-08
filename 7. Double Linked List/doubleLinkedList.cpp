@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
 
-struct NODE {
+struct NASABAH {
     int data;
-    struct NODE *prev;
-    struct NODE *next;
+    struct NASABAH *prev;
+    struct NASABAH *next;
 };
 
 int main() {
-    NODE *head;
-    NODE *first = NULL;
-    NODE *second = NULL;
-    NODE *third = NULL;
-    NODE *current = NULL;
+    NASABAH *head;
+    NASABAH *first = NULL;
+    NASABAH *second = NULL;
+    NASABAH *third = NULL;
+    NASABAH *current = NULL;
 
-    first = (struct NODE *)malloc(sizeof(struct NODE));
-    second = (struct NODE *)malloc(sizeof(struct NODE));
-    third = (struct NODE *)malloc(sizeof(struct NODE));
+    first = (struct NASABAH *)malloc(sizeof(struct NASABAH));
+    second = (struct NASABAH *)malloc(sizeof(struct NASABAH));
+    third = (struct NASABAH *)malloc(sizeof(struct NASABAH));
 
     first->data = 1;
     second->data = 2;

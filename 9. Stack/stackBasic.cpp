@@ -3,23 +3,23 @@ using namespace std;
 
 const int kapasitas = 5;
 
-struct STACK {
+struct Stack {
     int top;
     int temp[kapasitas];
-} STACK;
+} Stack;
 
 void createStack() {
-    STACK.top = -1;
+    Stack.top = -1;
 }
 
 int isEmpty() {
-    if (STACK.top == -1) {
+    if (Stack.top == -1) {
         return 1;
     } return 0;
 }
 
 int isFull() {
-    if (STACK.top == kapasitas - 1) {
+    if (Stack.top == kapasitas - 1) {
         return 1;
     } return 0;
 }
@@ -28,8 +28,8 @@ void push(int data) {
     if (isFull() == 1) {
         cout << "Maaf, stack sudah penuh" << endl;
     } else {
-        STACK.top++; STACK.temp[STACK.top] = data;
-        cout << "Data: " << STACK.temp[STACK.top] << " berhasil masuk ke dalam stack" << endl;
+        Stack.top++; Stack.temp[Stack.top] = data;
+        cout << "Data: " << Stack.temp[Stack.top] << " berhasil masuk ke dalam stack" << endl;
     }
 }
 
@@ -37,8 +37,8 @@ void displayStack() {
     if (isEmpty() == 0) {
         cout << "Menampilkan isi stack: " << endl;
 
-        for (int i = STACK.top; i >= 0; i--) {
-            cout << "Data index stack ke-" << i << " adalah " << STACK.temp[i] << endl;
+        for (int i = Stack.top; i >= 0; i--) {
+            cout << "Data index stack ke-" << i << " adalah " << Stack.temp[i] << endl;
         } cout << endl;
     } else {
         cout << "Maaf tidak ada data pada stack" << endl;

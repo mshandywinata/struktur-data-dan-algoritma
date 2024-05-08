@@ -8,13 +8,13 @@ struct DATA {
     string email;
 };
 
-struct NODE {
+struct NASABAH {
     DATA mahasiswa;
-    NODE *next;
+    NASABAH *next;
 };
 
-NODE *head;
-NODE *tail;
+NASABAH *head;
+NASABAH *tail;
 
 bool kosong() {
     if (head == NULL) {
@@ -22,9 +22,9 @@ bool kosong() {
     } return false;
 }
 
-void tambahAwal(string nim, string nama, string email) {
-    NODE *nodeBaru;
-    nodeBaru = new NODE;
+void tambahAkun(string nim, string nama, string email) {
+    NASABAH *nodeBaru;
+    nodeBaru = new NASABAH;
     nodeBaru -> mahasiswa.nim = nim;
     nodeBaru -> mahasiswa.nama = nama;
     nodeBaru -> mahasiswa.email = email;
@@ -39,8 +39,8 @@ void tambahAwal(string nim, string nama, string email) {
 }
 
 void tambahAkhir(string nim, string nama, string email) {
-    NODE *nodeBaru, *current;
-    nodeBaru = new NODE;
+    NASABAH *nodeBaru, *current;
+    nodeBaru = new NASABAH;
     nodeBaru -> mahasiswa.nim = nim;
     nodeBaru -> mahasiswa.nama = nama;
     nodeBaru -> mahasiswa.email = email;
@@ -57,12 +57,12 @@ void tambahAkhir(string nim, string nama, string email) {
     }
 }
 
-void tambahTengah(struct NODE *nodeSebelum, string nim, string nama, string email) {
+void tambahTengah(struct NASABAH *nodeSebelum, string nim, string nama, string email) {
     if (nodeSebelum == NULL) {
         cout << "Nilai sebelumnya tidak boleh NULL";
         return;
     } else {
-        NODE *nodeBaru = new NODE;
+        NASABAH *nodeBaru = new NASABAH;
         nodeBaru -> mahasiswa.nim = nim;
         nodeBaru -> mahasiswa.nama = nama;
         nodeBaru -> mahasiswa.email = email;
@@ -73,7 +73,7 @@ void tambahTengah(struct NODE *nodeSebelum, string nim, string nama, string emai
 }
 
 void hapusAwal() {
-    NODE *hapus;
+    NASABAH *hapus;
     string nim, nama, email;
 
     if (kosong()) {
@@ -98,8 +98,8 @@ void hapusAwal() {
     }
 }
 
-void hapusAkhir() {
-    NODE *hapus, *current;
+void hapusAkun() {
+    NASABAH *hapus, *current;
     if (kosong()) {
         head = NULL;
     } else {
@@ -110,12 +110,12 @@ void hapusAkhir() {
     }
 }
 
-void hapusSetelah(struct NODE *nodeSebelum) {
+void hapusSetelah(struct NASABAH *nodeSebelum) {
     if (nodeSebelum == NULL) {
         cout << "Nilai sebelumnya tidak boleh NULL!";
         return; 
     } else {
-        NODE *hapus;
+        NASABAH *hapus;
         string nim, nama, email;
         hapus = nodeSebelum -> next;
         nodeSebelum -> next = hapus -> next;
@@ -133,7 +133,7 @@ int tampilkanList() {
     int count = 0;
 
     if (!kosong()) {
-        NODE *current;
+        NASABAH *current;
         current = head;
 
         while (current != NULL) {
@@ -154,7 +154,7 @@ void tampilkanBanyakList() {
     int nomor = 0;
 
     if (!kosong()) {
-        NODE *current;
+        NASABAH *current;
         current = head;
         string data;
 
@@ -256,7 +256,7 @@ tuple<string, string, string> inputData() {
     return make_tuple(nim, nama, email);
 }
 
-NODE *nodeSebelum(int nomor) {
+NASABAH *nodeSebelum(int nomor) {
     for (int i = 0; i < nomor; i++) {
         head = head -> next;
     } return head->next;
@@ -299,7 +299,7 @@ int main() {
 
                 if (opsiLanjutan == "1") {
                     tie(nim, nama, email) = inputData();
-                    tambahAwal(nim, nama, email);
+                    tambahAkun(nim, nama, email);
                 } else if (opsiLanjutan == "2") {
                     tie(nim, nama, email) = inputData();
                     tambahAkhir(nim, nama, email);
@@ -323,7 +323,7 @@ int main() {
                 if (opsiLanjutan == "1") {
                     hapusAwal();
                 } else if (opsiLanjutan == "2") {
-                    hapusAkhir();
+                    hapusAkun();
                 } else if (opsiLanjutan == "3") {
                     int nomorList; cout << "Nomor   : "; cin >> nomorList;
                     hapusSetelah(nodeSebelum(nomorList));

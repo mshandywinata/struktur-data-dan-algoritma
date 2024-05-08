@@ -1,19 +1,19 @@
 #include <iostream>
 using namespace std;
 
-struct NODE {
+struct NASABAH {
     int data;
-    NODE *next;
+    NASABAH *next;
 };
 
 int main() {
-    NODE *head = NULL;  
-    NODE *second = NULL;  
-    NODE *third = NULL;
+    NASABAH *head = NULL;  
+    NASABAH *second = NULL;  
+    NASABAH *third = NULL;
 
-    head = new NODE();
-    second = new NODE();
-    third = new NODE();
+    head = new NASABAH();
+    second = new NASABAH();
+    third = new NASABAH();
 
     head->data = 1;
     head->next = second;

@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
 
-struct NODE {
+struct NASABAH {
     int data;
-    NODE *prev;
-    NODE *next;
+    NASABAH *prev;
+    NASABAH *next;
 };
 
-NODE *head;
-NODE *tail;
-NODE *current = NULL;
+NASABAH *head;
+NASABAH *tail;
+NASABAH *current = NULL;
 
 bool kosong() {
     if (head == NULL) {
@@ -18,8 +18,8 @@ bool kosong() {
 }
 
 void insertAwal(int nilai) {
-    NODE *nodeBaru;
-    nodeBaru = new NODE;
+    NASABAH *nodeBaru;
+    nodeBaru = new NASABAH;
     nodeBaru->data = nilai;
 
     if (kosong()) {
@@ -33,8 +33,8 @@ void insertAwal(int nilai) {
 }
 
 void insertAkhir(int nilai) {
-    NODE *nodeBaru;
-    nodeBaru = new NODE;
+    NASABAH *nodeBaru;
+    nodeBaru = new NASABAH;
     nodeBaru->data = nilai;
     nodeBaru->next = NULL;
 
@@ -51,13 +51,13 @@ void insertAkhir(int nilai) {
     }
 }
 
-void insertSetelah(struct NODE *nextNode, int nilai) {
+void insertSetelah(struct NASABAH *nextNode, int nilai) {
     if (nextNode == NULL) {
         cout << "Nilai sebelumnya tidak boleh NULL!";
         return;
     }
 
-    NODE *nodeBaru = new NODE;
+    NASABAH *nodeBaru = new NASABAH;
     nodeBaru->data = nilai;
 
     if (kosong()) {
@@ -71,7 +71,7 @@ void insertSetelah(struct NODE *nextNode, int nilai) {
 }
 
 void hapusAwal() {
-    NODE *hapus;
+    NASABAH *hapus;
     if (kosong()) {
         head = NULL;
     } if (head == hapus) {
@@ -98,8 +98,8 @@ void hapusAwal() {
 //     }
 // }
 
-void hapusAkhir() {
-    NODE *hapus, *current;
+void hapusAkun() {
+    NASABAH *hapus, *current;
 
     if (kosong()) {
         head = NULL;
@@ -121,7 +121,7 @@ void hapusAkhir() {
 
 void outputList() {
     if (!kosong()) {
-        NODE *nodeSekarang;
+        NASABAH *nodeSekarang;
         nodeSekarang = head;
 
         while (nodeSekarang != NULL) {
@@ -140,7 +140,7 @@ int main() {
     insertAkhir(3);
     insertAkhir(5);
     outputList();
-    hapusAkhir();
+    hapusAkun();
     outputList();
     hapusAwal();
     outputList();

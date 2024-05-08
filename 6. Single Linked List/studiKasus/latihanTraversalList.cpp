@@ -1,24 +1,24 @@
 #include <iostream>
 using namespace std;
 
-struct NODE {
+struct NASABAH {
     int data;
-    NODE *next;
+    NASABAH *next;
 };
 
 int main() {
-    NODE *head = NULL;
-    NODE *second = NULL;
-    NODE *third = NULL;
-    NODE *fourth = NULL;
-    NODE *fifth = NULL;
-    NODE *current = NULL;
+    NASABAH *head = NULL;
+    NASABAH *second = NULL;
+    NASABAH *third = NULL;
+    NASABAH *fourth = NULL;
+    NASABAH *fifth = NULL;
+    NASABAH *current = NULL;
 
-    head = (struct NODE *)malloc(sizeof(struct NODE));
-    second = (struct NODE *)malloc(sizeof(struct NODE));
-    third = (struct NODE *)malloc(sizeof(struct NODE));
-    fourth = (struct NODE *)malloc(sizeof(struct NODE));
-    fifth = (struct NODE *)malloc(sizeof(struct NODE));
+    head = (struct NASABAH *)malloc(sizeof(struct NASABAH));
+    second = (struct NASABAH *)malloc(sizeof(struct NASABAH));
+    third = (struct NASABAH *)malloc(sizeof(struct NASABAH));
+    fourth = (struct NASABAH *)malloc(sizeof(struct NASABAH));
+    fifth = (struct NASABAH *)malloc(sizeof(struct NASABAH));
 
     head->data = 2;
     head->next = second;

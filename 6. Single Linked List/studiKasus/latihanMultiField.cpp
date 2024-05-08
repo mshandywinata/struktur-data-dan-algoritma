@@ -7,13 +7,13 @@ struct DATA_MAHASISWA {
     string email;
 };
 
-struct NODE {
+struct NASABAH {
     DATA_MAHASISWA rpl;
-    NODE *next;
+    NASABAH *next;
 };
 
-NODE *head;
-NODE *tail;
+NASABAH *head;
+NASABAH *tail;
 
 bool apakahKosong() {
     if (head == NULL) {
@@ -21,9 +21,9 @@ bool apakahKosong() {
     } return false;
 }
 
-void tambahAwal(string nim, string nama, string email) {
-    NODE *nodeBaru;
-    nodeBaru = new NODE;
+void tambahAkun(string nim, string nama, string email) {
+    NASABAH *nodeBaru;
+    nodeBaru = new NASABAH;
     nodeBaru->rpl.nim = nim;
     nodeBaru->rpl.nama = nama;
     nodeBaru->rpl.email = email;
@@ -37,9 +37,9 @@ void tambahAwal(string nim, string nama, string email) {
     }
 }
 
-void tampilkanList() {
+void tampilkanNasabah() {
     if (!apakahKosong()) {
-        NODE *nodeSekarang;
+        NASABAH *nodeSekarang;
         nodeSekarang = head;
 
         while(nodeSekarang != NULL) {
@@ -53,11 +53,11 @@ void tampilkanList() {
 }
 
 int main() {
-    tambahAwal("2305848", "Muhamad Shandy Winata", "shandywinata007@gmail.com");
-    tambahAwal("2305848", "Muhamad Shandy", "shandy@gmail.com");
-    tambahAwal("2305848", "Winata", "winata007@gmail.com");
+    tambahAkun("2305848", "Muhamad Shandy Winata", "shandywinata007@gmail.com");
+    tambahAkun("2305848", "Muhamad Shandy", "shandy@gmail.com");
+    tambahAkun("2305848", "Winata", "winata007@gmail.com");
 
-    tampilkanList();
+    tampilkanNasabah();
 
     return 0;
 }

@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-struct NODE {
+struct NASABAH {
     int data;
-    NODE *next;
+    NASABAH *next;
 };
 
-NODE *head; NODE *tail;
+NASABAH *head; NASABAH *tail;
 
 bool apakahKosong() {
     if (head == NULL) {
@@ -15,8 +15,8 @@ bool apakahKosong() {
 }
 
 void insertAwal(int nilai) {
-    NODE *nodeBaru;
-    nodeBaru = new NODE;
+    NASABAH *nodeBaru;
+    nodeBaru = new NASABAH;
     nodeBaru->data = nilai;
     if (apakahKosong()) {
         head = nodeBaru;
@@ -27,21 +27,21 @@ void insertAwal(int nilai) {
     }
 }
 
-void insertSetelah(struct NODE *nodeSebelum, int nilai) {
+void insertSetelah(struct NASABAH *nodeSebelum, int nilai) {
     if (nodeSebelum == NULL) {
         cout << "Nilai node sebelumnya tidak boleh NULL" << endl;
         return;
     }
 
-    NODE *nodeBaru = new NODE;
+    NASABAH *nodeBaru = new NASABAH;
     nodeBaru->data = nilai;
     nodeBaru->next = nodeSebelum->next;
     nodeSebelum->next = nodeBaru;
 }
 
 void insertAkhir(int nilai) {
-    NODE *nodeBaru, *nodeSekarang;
-    nodeBaru = new NODE;
+    NASABAH *nodeBaru, *nodeSekarang;
+    nodeBaru = new NASABAH;
     nodeBaru->data = nilai;
     nodeBaru->next = NULL;
     if (apakahKosong()) {
@@ -56,9 +56,9 @@ void insertAkhir(int nilai) {
     }
 }
 
-void tampilkanList() {
+void tampilkanNasabah() {
     if (!apakahKosong()) {
-        NODE *nodeSekarang;
+        NASABAH *nodeSekarang;
         nodeSekarang = head;
 
         while (nodeSekarang != NULL) {
@@ -74,7 +74,7 @@ int main() {
         if (i % 2 == 0) {
             insertAkhir(i);
         }
-    } tampilkanList();
+    } tampilkanNasabah();
 
     return 0;
 }

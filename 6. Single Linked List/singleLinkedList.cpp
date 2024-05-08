@@ -2,14 +2,14 @@
 #include <malloc.h>
 using namespace std;
 
-struct NODE {
+struct NASABAH {
     int bilangan;
-    NODE *next;
+    NASABAH *next;
 };
 
 int main() {
-    struct NODE *head = NULL;
-    head = (struct NODE*)malloc(sizeof(struct NODE));
+    struct NASABAH *head = NULL;
+    head = (struct NASABAH*)malloc(sizeof(struct NASABAH));
     cout << head << endl;
     
     return 0;
